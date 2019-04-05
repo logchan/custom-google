@@ -1,0 +1,30 @@
+{
+	"manifest_version": 2,
+	"name": "Custom Google",
+	"version": "1.0",
+	"homepage_url": "https://github.com/logchan/custom-google",
+	"author": "logchan",
+	"description": "Have more control over your Google search experience",
+	"icons": {
+		"128": "icon/CustomGoogle128.png"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.google.com/search?*"
+			],
+			"js": [
+				"google_page.js"
+			],
+			"run_at": "document_start"
+		}
+	],
+	"options_ui": {
+		"chrome_style": true,
+		"page": "options/options.html",
+		"open_in_tab": true
+	},
+	"permissions": [
+		"storage"
+	]
+}
